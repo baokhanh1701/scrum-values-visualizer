@@ -25,11 +25,11 @@ export default function AssessmentForm() {
             userToDb,
             scrumValuesState
         };
+        console.log(scrumValuesState);
         localStorage.setItem('scrum-values-current-user', JSON.stringify(scrumValuesState));
         addDocument('assessment', newAssessment);
         localStorage.setItem('scrum-assessment', JSON.stringify(newAssessment));
         // add new assessment to db, linked to user
-        console.log(scrumValuesState);
     };
 
     const onChangeCourage = (value) => {
@@ -1073,8 +1073,13 @@ export default function AssessmentForm() {
                     ]}
                 />
             </Col>
-
-            <SuccessModal />
+            <SuccessModal 
+                cou={scrumValues.courage}
+                com={scrumValues.commitment}
+                foc={scrumValues.focus}
+                ope={scrumValues.openness}
+                res={scrumValues.respect}
+            />
         </Row>
 
     )

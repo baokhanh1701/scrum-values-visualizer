@@ -42,7 +42,7 @@ export default function UserInfo() {
         addDocument('users', newProfile);
         localStorage.setItem('data', JSON.stringify(newProfile));
         // add new user to db
-        navigate('/home');
+        navigate(`/home/${JSON.parse(localStorage.getItem('data'))?.uid}`);
     };
     return (
         <WrapperStyled>

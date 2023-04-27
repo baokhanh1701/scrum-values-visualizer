@@ -20,7 +20,7 @@ export default function AuthProvider({ children }) {
     const unsubscribed = auth.onAuthStateChanged((userInfo) => {
       if (userInfo) {
         if (unAuthPage.includes(location.pathname)) {
-          navigate("/home");
+          navigate(`/home/${JSON.parse(localStorage.getItem('data'))?.uid}`);
         }
         return;
       }

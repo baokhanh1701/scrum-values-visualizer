@@ -10,6 +10,7 @@ import AssessmentForm from './Pages/AssessmentForm';
 import AppProvider from './Context/AppProvider';
 import Chart from './Components/Chart';
 import Home from './Pages/Home';
+import NewestChart from './Components/NewestChart';
 function App() {
   return (
     <BrowserRouter>
@@ -21,10 +22,10 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/user-info" element={<UserInfo />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home/:uid" element={<Home />} />
             <Route path="/assessment" element={<AssessmentForm />} />
             <Route path="/chart" element={<Chart />} />
-
+            <Route path="/newest-chart" element={<NewestChart />} />
           </Routes>
         </AppProvider>
       </AuthProvider>

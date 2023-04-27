@@ -18,9 +18,10 @@ export default function SuccessModal() {
         title="Assessment sent!"
         subTitle="Your Radar Chart is ready!"
       />
-      <a href={"/chart"} target='blank' style={{
-        alignContent: "center"
-      }} type="primary"> View your Radar Chart </a>
+      <a href={
+        "/newest-chart"} target='blank' style={{
+          alignContent: "center"
+        }} type="primary"> View your Radar Chart </a>
     </Modal>
   );
 }

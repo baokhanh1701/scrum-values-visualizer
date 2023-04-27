@@ -20,9 +20,8 @@ ChartJS.register(
     Legend
 );
 
-export default function Chart() {
+export default function NewestChart() {
     const scrumValuesCurrentUser = JSON.parse(localStorage.getItem('scrum-values-current-user'));
-    const [searchParams, setSearchParams] = useSearchParams();
     
     const data = {
         labels: ['Courage', 'Commitment', 'Focus', 'Openness', 'Respect'],
@@ -30,11 +29,11 @@ export default function Chart() {
             {
                 label: '# of Attributes Checked',
                 data: [
-                    searchParams.get("cou"),
-                    searchParams.get("com"),
-                    searchParams.get("foc"),
-                    searchParams.get("ope"),
-                    searchParams.get("res")
+                    scrumValuesCurrentUser.courage,
+                    scrumValuesCurrentUser.commitment,
+                    scrumValuesCurrentUser.focus,
+                    scrumValuesCurrentUser.openness,
+                    scrumValuesCurrentUser.respect
                 ],
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
